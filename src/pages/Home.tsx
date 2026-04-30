@@ -49,15 +49,11 @@ export default function Home() {
         animate="show"
         className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
       >
-        {GEMS.map((gem, index) => (
-          <motion.div 
-            key={gem.id} 
-            variants={item}
-          >
-            <Link 
-              to={gem.path}
-              className="gem-card group flex flex-col h-full"
-            >
+        {GEMS.map((gem, index) => {
+          const isExternal = gem.path.startsWith('http');
+          
+          const CardContent = (
+            <>
               <div className={cn(
                 "w-12 h-12 rounded-xl flex items-center justify-center mb-6 transition-all duration-300 group-hover:scale-110",
                 index % 2 === 0 ? "icon-box-blue" : "icon-box-gold"
@@ -74,9 +70,34 @@ export default function Home() {
                 Open Gem
                 <ArrowRight size={14} />
               </button>
-            </Link>
-          </motion.div>
-        ))}
+            </>
+          );
+
+          return (
+            <motion.div 
+              key={gem.id} 
+              variants={item}
+            >
+              {isExternal ? (
+                <a 
+                  href={gem.path}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="gem-card group flex flex-col h-full"
+                >
+                  {CardContent}
+                </a>
+              ) : (
+                <Link 
+                  to={gem.path}
+                  className="gem-card group flex flex-col h-full"
+                >
+                  {CardContent}
+                </Link>
+              )}
+            </motion.div>
+          );
+        })}
       </motion.div>
     </div>
   );

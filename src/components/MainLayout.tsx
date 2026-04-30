@@ -8,6 +8,10 @@ import { cn } from '../lib/utils';
 export default function MainLayout({ children }: { children: React.ReactNode }) {
   const location = useLocation();
 
+  if (location.pathname === '/gems/regulations') {
+    return <>{children}</>;
+  }
+
   return (
     <div className="min-h-screen bg-aditya-light flex flex-col font-sans">
       {/* Header */}
@@ -28,18 +32,34 @@ export default function MainLayout({ children }: { children: React.ReactNode }) 
             >
               Dashboard
             </Link>
-            {GEMS.map(gem => (
-              <Link
-                key={gem.id}
-                to={gem.path}
-                className={cn(
-                  "text-sm font-medium transition-all py-1 border-b-2",
-                  location.pathname === gem.path ? "border-aditya-gold opacity-100" : "border-transparent opacity-80 hover:opacity-100"
-                )}
-              >
-                {gem.title}
-              </Link>
-            ))}
+            {GEMS.map(gem => {
+              const isExternal = gem.path.startsWith('http');
+              if (isExternal) {
+                return (
+                  <a
+                    key={gem.id}
+                    href={gem.path}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-sm font-medium transition-all py-1 border-b-2 border-transparent opacity-80 hover:opacity-100"
+                  >
+                    {gem.title}
+                  </a>
+                );
+              }
+              return (
+                <Link
+                  key={gem.id}
+                  to={gem.path}
+                  className={cn(
+                    "text-sm font-medium transition-all py-1 border-b-2",
+                    location.pathname === gem.path ? "border-aditya-gold opacity-100" : "border-transparent opacity-80 hover:opacity-100"
+                  )}
+                >
+                  {gem.title}
+                </Link>
+              );
+            })}
           </nav>
         </div>
 

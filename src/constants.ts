@@ -1,4 +1,4 @@
-import { BookOpen, Calendar, GraduationCap, Briefcase, BarChart3, SearchCode, LucideIcon } from 'lucide-react';
+import { BookOpen, Calendar, GraduationCap, Briefcase, BarChart3, SearchCode, FileText, LucideIcon } from 'lucide-react';
 
 export interface GemMetadata {
   id: string;
@@ -17,7 +17,7 @@ export const GEMS: GemMetadata[] = [
     tagline: 'Policy & Rules Assistant',
     description: 'Get instant answers about university rules, exam policies, and academic regulations.',
     icon: BookOpen,
-    path: '/gems/regulations',
+    path: 'https://gemini.google.com/gem/1yBEpx544Bvz1dAK2kXu3uW1Sgpf2bgjp?usp=sharing',
     color: 'border-blue-500 text-blue-500'
   },
   {
@@ -26,7 +26,7 @@ export const GEMS: GemMetadata[] = [
     tagline: 'Faculty Productivity Tool',
     description: 'Generate structured weekly lesson plans based on your subject, syllabus, and timeframe.',
     icon: Calendar,
-    path: '/gems/lesson-plan',
+    path: 'https://gemini.google.com/gem/1lhZhE_aB4zbcLr9SJNcPvPpTenRuoGqb?usp=sharing',
     color: 'border-orange-500 text-orange-500'
   },
   {
@@ -44,7 +44,7 @@ export const GEMS: GemMetadata[] = [
     tagline: 'Career Accelerator',
     description: 'Build your resume, practice interview questions, and prepare for aptitude tests.',
     icon: Briefcase,
-    path: '/gems/placements',
+    path: 'https://gemini.google.com/gem/1CuUvoTB1DP1GDYzHGiYOgPqeK4H6ozJn?usp=sharing',
     color: 'border-emerald-500 text-emerald-500'
   },
   {
@@ -64,5 +64,14 @@ export const GEMS: GemMetadata[] = [
     icon: SearchCode,
     path: '/gems/plagiarism',
     color: 'border-rose-500 text-rose-500'
+  },
+  {
+    id: 'documents',
+    title: 'Documents Generation',
+    tagline: 'Official Documents Creator',
+    description: 'Quickly generate certificates, letters, memos and other official university documents.',
+    icon: FileText,
+    path: 'https://gemini.google.com/gem/1fIGbqyf1VRUCcYUwVmiAuTlFi1PkVuDd?usp=sharing',
+    color: 'border-teal-500 text-teal-500'
   }
 ];
