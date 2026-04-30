@@ -1,0 +1,47 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Inter", sans-serif;
+  
+  --color-aditya-blue: #1E3A8A;
+  --color-aditya-gold: #F59E0B;
+  --color-aditya-dark: #1E293B;
+  --color-aditya-slate: #64748B;
+  --color-aditya-border: #E2E8F0;
+  --color-aditya-light: #F8FAFC;
+}
+
+@layer base {
+  body {
+    @apply bg-aditya-light text-aditya-dark font-sans antialiased;
+  }
+}
+
+.gem-card {
+  @apply bg-white border border-aditya-border rounded-2xl p-6 transition-all duration-200 shadow-sm;
+}
+
+.gem-card:hover {
+  @apply border-aditya-blue shadow-lg -translate-y-1;
+}
+
+.icon-box-blue { @apply bg-blue-50 text-aditya-blue; }
+.icon-box-gold { @apply bg-amber-50 text-aditya-gold; }
+
+.markdown-body {
+  @apply text-aditya-dark leading-relaxed;
+}
+
+.markdown-body h1 { @apply text-2xl font-bold text-aditya-blue mt-6 mb-4 leading-tight; }
+.markdown-body h2 { @apply text-xl font-bold text-aditya-blue mt-5 mb-3 leading-tight; }
+.markdown-body h3 { @apply text-lg font-bold text-aditya-blue mt-4 mb-2; }
+.markdown-body p { @apply my-3; }
+.markdown-body ul { @apply list-disc list-inside my-4 space-y-2; }
+.markdown-body ol { @apply list-decimal list-inside my-4 space-y-2; }
+.markdown-body table { @apply w-full border-collapse my-6 text-sm bg-white rounded-xl overflow-hidden shadow-sm; }
+.markdown-body th { @apply bg-slate-50 border border-slate-100 p-3 text-left font-bold text-aditya-blue; }
+.markdown-body td { @apply border border-slate-100 p-3; }
+.markdown-body blockquote { @apply border-l-4 border-aditya-gold bg-slate-50 p-4 italic my-4 rounded-r-xl; }
+.markdown-body code { @apply bg-slate-100 text-aditya-blue px-1.5 py-0.5 rounded font-mono text-xs; }
