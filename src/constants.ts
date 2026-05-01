@@ -1,4 +1,4 @@
-import { BookOpen, Calendar, GraduationCap, Briefcase, BarChart3, SearchCode, FileText, LucideIcon } from 'lucide-react';
+import { BookOpen, Calendar, GraduationCap, Briefcase, BarChart3, SearchCode, FileText, TrendingUp, LucideIcon } from 'lucide-react';
 
 export interface GemMetadata {
   id: string;
@@ -73,5 +73,14 @@ export const GEMS: GemMetadata[] = [
     icon: FileText,
     path: 'https://gemini.google.com/gem/1fIGbqyf1VRUCcYUwVmiAuTlFi1PkVuDd?usp=sharing',
     color: 'border-teal-500 text-teal-500'
+  },
+  {
+    id: 'forecast',
+    title: 'Semester Outcome Forecast',
+    tagline: 'Performance Predictor',
+    description: 'Predict semester outcomes and get insights into academic performance trends.',
+    icon: TrendingUp,
+    path: 'https://gemini.google.com/gem/1WZASzHwkeuU1QE2iJyHMvGOabDlLEJJN?usp=sharing',
+    color: 'border-amber-500 text-amber-500'
   }
 ];
