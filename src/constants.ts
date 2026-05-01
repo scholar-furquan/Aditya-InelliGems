@@ -17,7 +17,7 @@ export const GEMS: GemMetadata[] = [
     tagline: 'Policy & Rules Assistant',
     description: 'Get instant answers about university rules, exam policies, and academic regulations.',
     icon: BookOpen,
-    path: 'https://gemini.google.com/gem/1yBEpx544Bvz1dAK2kXu3uW1Sgpf2bgjp?usp=sharing',
+    path: 'https://notebooklm.google.com/notebook/894957c8-bd51-4383-b31f-dde6148000fe',
     color: 'border-blue-500 text-blue-500'
   },
   {
